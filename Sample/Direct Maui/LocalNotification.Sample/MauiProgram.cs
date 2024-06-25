@@ -34,7 +34,7 @@ public static class MauiProgram
                                         ResourceName = "i2"
                                     }
                                 },
-                                iOS =
+                                IOS =
                                 {
                                     Action = Plugin.LocalNotification.iOSOption.iOSActionType.Foreground
                                 },
@@ -54,7 +54,7 @@ public static class MauiProgram
                                         ResourceName = "i3"
                                     }
                                 },
-                                iOS =
+                                IOS =
                                 {
                                     Action = Plugin.LocalNotification.iOSOption.iOSActionType.Destructive
                                 },
@@ -82,7 +82,9 @@ public static class MauiProgram
 
 
 #if DEBUG
-        builder.Logging.AddDebug();
+        LocalNotificationCenter.LogLevel = LogLevel.Debug;
+        //builder.Logging.AddDebug();
+        builder.Logging.AddConsole();
 #endif
 
         builder.Services.AddTransient<MainPage>();
